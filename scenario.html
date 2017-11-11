@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Wewnętrzny Plan Operacyjno-Ratowniczy</title>
+    <link rel="stylesheet" href="favicon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style/wpor.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <!-- Pasek nawigacji -->
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+
+            <!-- Logo i linki nie do zwinięcia -->
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+                <a class="navbar-brand" href="index.html">
+                    <p class="capitalic">grupa azoty s.a.</p>
+                </a>
+            </div>
+
+            <!-- Linki, które będą zwinięte-->
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="mapa.html">Mapa <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">Scenariusze</a></li>
+                    <li><a href="subst.html">Substancje</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Autor</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Koniec paska nawigacyjnego -->
+
+    <!-- Główny kontener -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <p id="logoScenariusz">Scenariusze wypadkowe</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4">
+
+                <!-- Jednostki Produkcyjne -->
+
+                <div class="dropdown separatorTop">
+                    <button class="btn btn-default dropdown-toggle input-block-level form-control" type="button" id="brandSelect" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" title="Wybierz Jednostkę">
+				    <span class="fa fa-map-o"></span> Jednostki produkcyjne: 
+				    <span class="caret"></span>
+				  </button>
+                    <ul class="dropdown-menu" aria-labelledby="brandSelect">
+                        <li><a href="#" onclick="selectNawozy()">Jednostka Biznesowa Nawozy</a></li>
+                        <li><a href="#" onclick="selectTworzywa()">Segment Biznesowy Tworzyw</a></li>
+                        <li><a href="#" onclick="selectLogistyka()">Centrum Logistyki </a></li>
+                        <li><a href="#" onclick="selectKatalizatory()">Jednostka Biznesowa Katalizatory</a></li>
+                    </ul>
+                </div>
+
+                <!-- Instalacje Jednostki Biznesowej Nawozy -->
+
+                <div class="dropdown separatorTop nawozyInvisible" id="instalNawozy1">
+                    <button class="btn btn-default dropdown-toggle input-block-level form-control" type="button" id="instalNawozy" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" title="Wybierz instalację w JP Nawozy">
+				    Instalacje JP Nawozy
+				    <span class="caret"></span>
+				  </button>
+                    <ul class="dropdown-menu" aria-labelledby="instalNawozy">
+                        <li><a href="#" onclick="instAmon1()">Instalacja Amoniaku I</a></li>
+                        <li><a href="#" onclick="instAmon2()">Instalacja Amoniaku II</a></li>
+                        <li><a href="#" onclick="stoAmon()">Stokaż Amoniaku</a></li>
+                        <li><a href="#" onclick="instKas()">Instalacja Kwasu Azotowego Stężonego</a></li>
+                        <li><a href="#" onclick="stoKas()">Stokaż Kwasu Azotowego Stężonego</a></li>
+                        <li><a href="#" onclick="instNit()">Instalacja Nitrozy</a></li>
+                        <li><a href="#" onclick="instNaw()">Instalacje Nawozowe</a></li>
+                    </ul>
+                </div>
+
+                <!-- Instalacje Segmentu Biznesowego Tworzyw -->
+
+                <div class="dropdown separatorTop tworzywaInvisible" id="instalTworzywa1">
+                    <button class="btn btn-default dropdown-toggle input-block-level form-control" type="button" id="instalTworzywa" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" title="Wybierz instalację w SB Tworzyw">
+				    Instalacje SB Tworzyw
+				    <span class="caret"></span>
+				  </button>
+                    <ul class="dropdown-menu" aria-labelledby="instalTworzywa">
+                        <li><a href="#" onclick="instAzot()">Instalacja Azotynu Amonu</a></li>
+                        <li><a href="#" onclick="instSha()">Instalacja Siarczanu Hydroksyloaminy</a></li>
+                        <li><a href="#" onclick="stoOleumA()">Stokaż Oleum A-78, A-78a</a></li>
+                        <li><a href="#" onclick="stoFen()">Stokaż Fenolu</a></li>
+                        <li><a href="#" onclick="stoOleumK()">Stokaż Oleum K-13a</a></li>
+                        <li><a href="#" onclick="stoK50()">Stokaż Organiczny K-50</a></li>
+                        <li><a href="#" onclick="stoUtl()">Utlenianie i Destylacja Cykloheksanonu</a></li>
+                        <li><a href="#" onclick="cenCh()">Centrale chłodnicze nr I, V i VI</a></li>
+                        <li><a href="#" onclick="stoFor()">Zbiorniki formaliny</a></li>
+                        <li><a href="#" onclick="stoMet()">Stokaż metanolu</a></li>
+                        <li><a href="#" onclick="instFor()">Instalacja Formaliny i Trioksanu</a></li>
+                    </ul>
+                </div>
+
+                <!-- Instalacje Centrum Logistyki -->
+
+                <div class="dropdown separatorTop logistykaInvisible" id="instalLogistyka1">
+                    <button class="btn btn-default dropdown-toggle input-block-level form-control" type="button" id="instalLogistyka" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" title="Wybierz instalację w Centrum Logistyki">
+				    Instalacje Centrum Logistyki
+				    <span class="caret"></span>
+				  </button>
+                    <ul class="dropdown-menu" aria-labelledby="instalLogistyka">
+                        <li><a href="#" onclick="magNaw()">Magazyn Nawozów</a></li>
+                    </ul>
+                </div>
+
+                <!-- Instalacje JB Katalizatory -->
+
+                <div class="dropdown separatorTop katalizatoryInvisible" id="instalKatalizatory1">
+                    <button class="btn btn-default dropdown-toggle input-block-level form-control" type="button" id="instalKatalizatory" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" title="Wybierz instalację w JB Katalizatory">
+				    Instalacje JB Katalizatory
+				    <span class="caret"></span>
+				  </button>
+                    <ul class="dropdown-menu" aria-labelledby="instalKatalizatory">
+                        <li><a href="#" onclick="instKatalizatory()">Instalacja Katalizatorów</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Scenariusze instalacji amoniaku I -->
+                
+                <div class="dropdown separatorTop scenAmon1Invisible" id="scenAmon11">
+                    <button class="btn btn-default dropdown-toggle input-block-level form-control" type="button" id="scenAmon1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" title="Wybierz scenariusz wypadkowy dla Instalacji Amoniaku I">
+				    Scenariusze
+				    <span class="caret"></span>
+				  </button>
+                    <ul class="dropdown-menu" aria-labelledby="scenAmon1">
+                        <li><h6 class="dropdown-header">Instalacja Amoniaku I</h6></li>
+                        <li><a href="#" onclick="NA6A()">NA/6/A</a></li><li><a href="#" onclick="NA6B()">NA/6/B</a></li><li><a href="#" onclick="NA6C()">NA/6/C</a></li><li><a href="#" onclick="NA6D()">NA/6/D</a></li><li><a href="#" onclick="NA6E()">NA/6/E</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Scenariusze dla instalacji amoniaku II -->
+                
+               <div class="dropdown separatorTop scenAmon2Invisible" id="scenAmon21">
+                    <button class="btn btn-default dropdown-toggle input-block-level form-control" type="button" id="scenAmon2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" title="Wybierz scenariusz wypadkowy dla Instalacji Amoniaku II">
+				    Scenariusze
+				    <span class="caret"></span>
+				  </button>
+                    <ul class="dropdown-menu" aria-labelledby="scenAmon2">
+                        <li><h6 class="dropdown-header">Instalacja Amoniaku II</h6></li>
+                        <li><a href="#" onclick="NA6Aprim()">NA/6/A'</a></li>
+                        <li><a href="#" onclick="NA6Bprim()">NA/6/B'</a></li>
+                        <li><a href="#" onclick="NA6Cprim()">NA/6/C'</a></li>
+                        <li><a href="#" onclick="NA6Dprim()">NA/6/D'</a></li>
+                    </ul>
+                </div> 
+                
+                 <!-- Scenariusze dla stokażu amoniaku -->
+                
+               <div class="dropdown separatorTop scenStoAmonInvisible" id="scenStoAmon1">
+                    <button class="btn btn-default dropdown-toggle input-block-level form-control" type="button" id="scenStoAmon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" title="Wybierz scenariusz wypadkowy dla Stokażu Amoniaku">
+				    Scenariusze
+				    <span class="caret"></span>
+				  </button>
+                    <ul class="dropdown-menu" aria-labelledby="scenStoAmon">
+                        <li><h6 class="dropdown-header">Stokaż amoniaku</h6></li>
+                        <li><a href="#" onclick="NA4A()">NA/4/A</a></li>
+                        <li><a href="#" onclick="NA4B()">NA/4/B</a></li>
+                        <li><a href="#" onclick="NA4C()">NA/4/C</a></li>
+                        <li><a href="#" onclick="NA4D()">NA/4/D</a></li>
+                    </ul>
+                </div> 
+                
+                 <!-- Scenariusze dla instalacji kwasu azotowego stężonego -->
+                
+               <div class="dropdown separatorTop scenInstKasInvisible" id="scenInstKas1">
+                    <button class="btn btn-default dropdown-toggle input-block-level form-control" type="button" id="scenInstKas" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" title="Wybierz scenariusz wypadkowy dla Instalacji Kwasu Azotowego Stężonego">
+				    Scenariusze
+				    <span class="caret"></span>
+				  </button>
+                    <ul class="dropdown-menu" aria-labelledby="scenInstKas">
+                        <li><h6 class="dropdown-header">Instalacja Kwasu Azotowego Stężonego</h6></li>
+                        <li><a href="#" onclick="NA2A()">NA/2/A</a></li>
+                        <li><a href="#" onclick="NA2B()">NA/2/B</a></li>
+                    </ul>
+                </div> 
+                
+                <!-- Scenariusze dla stokażu kwasu azotowego stężonego -->
+                
+               <div class="dropdown separatorTop scenStoKasInvisible" id="scenStoKas1">
+                    <button class="btn btn-default dropdown-toggle input-block-level form-control" type="button" id="scenStoKas" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" title="Wybierz scenariusz wypadkowy dla Stokażu Kwasu Azotowego Stężonego">
+				    Scenariusze
+				    <span class="caret"></span>
+				  </button>
+                    <ul class="dropdown-menu" aria-labelledby="scenStoKas">
+                        <li><h6 class="dropdown-header">Stokaż Kwasu Azotowego Stężonego</h6></li>
+                        <li><a href="#" onclick="NA3A()">NA/3/A</a></li>
+                        <li><a href="#" onclick="NA3B()">NA/3/B</a></li>
+                        <li><a href="#" onclick="NA3C()">NA/3/C</a></li>
+                    </ul>
+                </div> 
+                
+                <!-- Scenariusze dla instalacji nitrozy -->
+                
+               <div class="dropdown separatorTop scenInstNitInvisible" id="scenInstNit1">
+                    <button class="btn btn-default dropdown-toggle input-block-level form-control" type="button" id="scenInstNit" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" title="Wybierz scenariusz wypadkowy dla Instalacji Nitrozy">
+				    Scenariusze
+				    <span class="caret"></span>
+				  </button>
+                    <ul class="dropdown-menu" aria-labelledby="scenInstNit">
+                        <li><h6 class="dropdown-header">Instalacja Nitrozy</h6></li>
+                        <li><a href="#" onclick="NA1A()">NA/1/A</a></li>
+                        <li><a href="#" onclick="NA1B()">NA/1/B</a></li>
+                        <li><a href="#" onclick="NA1C()">NA/1/C</a></li>
+                        <li><a href="#" onclick="NA1D()">NA/1/D</a></li>
+                        <li><a href="#" onclick="NA1E()">NA/1/E</a></li>
+                        <li><a href="#" onclick="NA1F()">NA/1/F</a></li> 
+                    </ul>
+                </div> 
+                
+                 <!-- Scenariusze dla instalacji nawozowych -->
+                
+               <div class="dropdown separatorTop scenInstNawInvisible" id="scenInstNaw1">
+                    <button class="btn btn-default dropdown-toggle input-block-level form-control" type="button" id="scenInstNaw" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" title="Wybierz scenariusz wypadkowy dla Instalacji Nawozowych">
+				    Scenariusze
+				    <span class="caret"></span>
+				  </button>
+                    <ul class="dropdown-menu" aria-labelledby="scenInstNaw">
+                        <li><h6 class="dropdown-header">Instalacje Nawozowe</h6></li>
+                        <li><a href="#" onclick="NA5A()">NA/5/A</a></li>
+                        <li><a href="#" onclick="NA5B()">NA/5/B</a></li>
+                        <li><a href="#" onclick="NA5C()">NA/5/C</a></li><li><a href="#" onclick="NA5D()">NA/5/D</a></li>
+                    </ul>
+                </div> 
+                
+                <!-- Scenariusze dla instalacji azotynu amonu -->
+                
+               <div class="dropdown separatorTop scenInstAzotInvisible" id="scenInstAzot1">
+                    <button class="btn btn-default dropdown-toggle input-block-level form-control" type="button" id="scenInstAzot" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" title="Wybierz scenariusz wypadkowy dla Instalacji Azotynu Amonu">
+				    Scenariusze
+				    <span class="caret"></span>
+				  </button>
+                    <ul class="dropdown-menu" aria-labelledby="scenInstAzot">
+                        <li><h6 class="dropdown-header">Instalacja Azotynu Amonu</h6></li>
+                        <li><a href="#" onclick="NK9A()">NK/9/A</a></li>
+                        <li><a href="#" onclick="NK9B()">NK/9/B</a></li>
+                        <li><a href="#" onclick="NK9C()">NK/9/C</a></li>
+                        <li><a href="#" onclick="NK9D()">NK/9/D</a></li>
+                        <li><a href="#" onclick="NK9E()">NK/9/E</a></li>
+                    </ul>
+                </div> 
+                
+                 <!-- Scenariusze dla instalacji siarczanu hydroksyloaminy -->
+                
+               <div class="dropdown separatorTop scenInstShaInvisible" id="scenInstSha1">
+                    <button class="btn btn-default dropdown-toggle input-block-level form-control" type="button" id="scenInstSha" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" title="Wybierz scenariusz wypadkowy dla Instalacji Siarczanu Hydroksyloaminy">
+				    Scenariusze
+				    <span class="caret"></span>
+				  </button>
+                    <ul class="dropdown-menu" aria-labelledby="scenInstSha">
+                        <li><h6 class="dropdown-header">Instalacja Siarczanu Hydroksyloaminy</h6></li>
+                        <li><a href="#" onclick="NK9F()">NK/9/F</a></li>
+                        <li><a href="#" onclick="NK9G()">NK/9/G</a></li>
+                        <li><a href="#" onclick="NK9H()">NK/9/H</a></li>
+                        <li><a href="#" onclick="NK9I()">NK/9/I</a></li>
+                        <li><a href="#" onclick="NK9J()">NK/9/J</a></li>
+                    </ul>
+                </div> 
+                
+                <!-- Scenariusze dla stokażu oleum A-78, A-78a -->
+                
+               <div class="dropdown separatorTop scenStoOleumAInvisible" id="scenStoOleumA1">
+                    <button class="btn btn-default dropdown-toggle input-block-level form-control" type="button" id="scenStoOleumA" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" title="Wybierz scenariusz wypadkowy dla Stokażu Oleum A-78, A-78a">
+				    Scenariusze
+				    <span class="caret"></span>
+				  </button>
+                    <ul class="dropdown-menu" aria-labelledby="scenStoOleumA">
+                        <li><h6 class="dropdown-header">Stokaż Oleum A-78, A-78a</h6></li>
+                        <li><a href="#" onclick="NK5A()">NK/5/A</a></li>
+                        <li><a href="#" onclick="NK5B()">NK/5/B</a></li>
+                        <li><a href="#" onclick="NK5C()">NK/5/C</a></li>
+                        <li><a href="#" onclick="NK5D()">NK/5/D</a></li>
+                        <li><a href="#" onclick="NK5E()">NK/5/E</a></li>
+                        <li><a href="#" onclick="NK5F()">NK/5/F</a></li>
+                    </ul>
+                </div> 
+                
+                <!-- Scenariusze dla stokażu fenolu -->
+                
+               <div class="dropdown separatorTop scenStoFenInvisible" id="scenStoFen1">
+                    <button class="btn btn-default dropdown-toggle input-block-level form-control" type="button" id="scenStoFen" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" title="Wybierz scenariusz wypadkowy dla Stokażu Fenolu">
+				    Scenariusze
+				    <span class="caret"></span>
+				  </button>
+                    <ul class="dropdown-menu" aria-labelledby="scenStoFen">
+                        <li><h6 class="dropdown-header">Stokaż Fenolu</h6></li>
+                        <li><a href="#" onclick="NK3A()">NK/3/A</a></li>
+                        <li><a href="#" onclick="NK3B()">NK/3/B</a></li>
+                        <li><a href="#" onclick="NK3C()">NK/3/C</a></li>
+                    </ul>
+                </div> 
+                
+                <!-- Scenariusze dla stokażu oleum K-13a -->
+                
+               <div class="dropdown separatorTop scenStoOleumKInvisible" id="scenStoOleumK1">
+                    <button class="btn btn-default dropdown-toggle input-block-level form-control" type="button" id="scenStoOleumK" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" title="Wybierz scenariusz wypadkowy dla Stokażu Oleum K-13a">
+				    Scenariusze
+				    <span class="caret"></span>
+				  </button>
+                    <ul class="dropdown-menu" aria-labelledby="scenStoOleumK">
+                        <li><h6 class="dropdown-header">Stokaż Oleum K-13a</h6></li>
+                        <li><a href="#" onclick="NK4A()">NK/4/A</a></li>
+                        <li><a href="#" onclick="NK4B()">NK/4/B</a></li>
+                    </ul>
+                </div> 
+                
+                <!-- Scenariusze dla stokażu organicznego K-50 -->
+                
+               <div class="dropdown separatorTop scenStoK50Invisible" id="scenStoK501">
+                    <button class="btn btn-default dropdown-toggle input-block-level form-control" type="button" id="scenStoK50" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" title="Wybierz scenariusz wypadkowy dla Stokażu Organicznego K-50">
+				    Scenariusze
+				    <span class="caret"></span>
+				  </button>
+                    <ul class="dropdown-menu" aria-labelledby="scenStoK50">
+                        <li><h6 class="dropdown-header">Stokaż Organiczny K-50</h6></li>
+                        <li><a href="#" onclick="NK1A()">NK/1/A</a></li>
+                        <li><a href="#" onclick="NK1B()">NK/1/B</a></li>
+                        <li><a href="#" onclick="NK1C()">NK/1/C</a></li>
+                        <li><a href="#" onclick="NK1D()">NK/1/D</a></li>
+                        <li><a href="#" onclick="NK1E()">NK/1/E</a></li>
+                        <li><a href="#" onclick="NK1F()">NK/1/F</a></li>
+                        <li><a href="#" onclick="NK1G()">NK/1/G</a></li>
+                        <li><a href="#" onclick="NK1H()">NK/1/H</a></li>
+                        <li><a href="#" onclick="NK1I()">NK/1/I</a></li>
+                        <li><a href="#" onclick="NK1J()">NK/1/J</a></li>
+                        <li><a href="#" onclick="NK1K()">NK/1/K</a></li>
+                        <li><a href="#" onclick="NK1L()">NK/1/L</a></li>
+                    </ul>
+                </div> 
+                
+                <!-- Scenariusze dla utleniania i destylacji cykloheksanu -->
+                
+               <div class="dropdown separatorTop scenStoUtlInvisible" id="scenStoUtl1">
+                    <button class="btn btn-default dropdown-toggle input-block-level form-control" type="button" id="scenStoUtl" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" title="Wybierz scenariusz wypadkowy dla Utleniania i Destylacji Cykloheksanu">
+				    Scenariusze
+				    <span class="caret"></span>
+				  </button>
+                    <ul class="dropdown-menu" aria-labelledby="scenStoUtl">
+                        <li><h6 class="dropdown-header">Utlenianie i Destylacja Cykloheksanu</h6></li>
+                        <li><a href="#" onclick="NK2A()">NK/2/A</a></li>
+                        <li><a href="#" onclick="NK2B()">NK/2/B</a></li>
+                        <li><a href="#" onclick="NK2C()">NK/2/C</a></li>
+                        <li><a href="#" onclick="NK2D()">NK/2/D</a></li>
+                        <li><a href="#" onclick="NK2E()">NK/2/E</a></li>
+                    </ul>
+                </div>  
+                
+                <!-- Scenariusze dla cental chłodniczych -->
+                
+               <div class="dropdown separatorTop scenCenChInvisible" id="scenCenCh1">
+                    <button class="btn btn-default dropdown-toggle input-block-level form-control" type="button" id="scenCenCh" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" title="Wybierz scenariusz wypadkowy dla Central Chłodniczych">
+				    Scenariusze
+				    <span class="caret"></span>
+				  </button>
+                    <ul class="dropdown-menu" aria-labelledby="scenCenCh">
+                        <li><h6 class="dropdown-header">Centrale Chłodnicze</h6></li>
+                        <li><a href="#" onclick="NK6A()">NK/6/A</a></li>
+                        <li><a href="#" onclick="NK6B()">NK/6/B</a></li>
+                    </ul>
+                </div> 
+                
+                 <!-- Scenariusze dla stokażu formaliny -->
+                
+               <div class="dropdown separatorTop scenStoForInvisible" id="scenStoFor1">
+                    <button class="btn btn-default dropdown-toggle input-block-level form-control" type="button" id="scenStoFor" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" title="Wybierz scenariusz wypadkowy dla Stokażu Formaliny">
+				    Scenariusze
+				    <span class="caret"></span>
+				  </button>
+                    <ul class="dropdown-menu" aria-labelledby="scenStoFor">
+                        <li><h6 class="dropdown-header">Stokaż Formaliny</h6></li>
+                        <li><a href="#" onclick="NK7A()">NK/7/A</a></li>
+                        <li><a href="#" onclick="NK7B()">NK/7/B</a></li>
+                    </ul>
+                </div> 
+                
+                <!-- Scenariusze dla stokażu metanolu -->
+                
+               <div class="dropdown separatorTop scenStoMetInvisible" id="scenStoMet1">
+                    <button class="btn btn-default dropdown-toggle input-block-level form-control" type="button" id="scenStoMet" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" title="Wybierz scenariusz wypadkowy dla Stokażu Metanolu">
+				    Scenariusze
+				    <span class="caret"></span>
+				  </button>
+                    <ul class="dropdown-menu" aria-labelledby="scenStoMet">
+                        <li><h6 class="dropdown-header">Stokaż Metanolu</h6></li>
+                        <li><a href="#" onclick="NK8A()">NK/8/A</a></li>
+                        <li><a href="#" onclick="NK8B()">NK/8/B</a></li>
+                        <li><a href="#" onclick="NK8C()">NK/8/C</a></li>
+                    </ul>
+                </div> 
+                
+                <!-- Scenariusze dla instalacji formaliny i trioksanu -->
+                
+               <div class="dropdown separatorTop scenInstForInvisible" id="scenInstFor1">
+                    <button class="btn btn-default dropdown-toggle input-block-level form-control" type="button" id="scenInstFor" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" title="Wybierz scenariusz wypadkowy dla Instalacji Formaliny i Trioksanu">
+				    Scenariusze
+				    <span class="caret"></span>
+				  </button>
+                    <ul class="dropdown-menu" aria-labelledby="scenInstFor">
+                        <li><h6 class="dropdown-header">Instalacja Formaliny i Trioksanu</h6></li>
+                        <li><a href="#" onclick="NK8D()">NK/8/D</a></li>
+                        <li><a href="#" onclick="NK8E()">NK/8/E</a></li>
+                        <li><a href="#" onclick="NK8F()">NK/8/F</a></li>
+                        <li><a href="#" onclick="NK8G()">NK/8/G</a></li>
+                        <li><a href="#" onclick="NK8H()">NK/8/H</a></li>
+                    </ul>
+                </div> 
+                
+                <!-- Scenariusze dla magazynów nawozów -->
+                
+               <div class="dropdown separatorTop scenMagNawInvisible" id="scenMagNaw1">
+                    <button class="btn btn-default dropdown-toggle input-block-level form-control" type="button" id="scenMagNaw" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" title="Wybierz scenariusz wypadkowy dla Magazynów Nawozów">
+				    Scenariusze
+				    <span class="caret"></span>
+				  </button>
+                    <ul class="dropdown-menu" aria-labelledby="scenMagNaw">
+                        <li><h6 class="dropdown-header">Magazyny Nawozów</h6></li>
+                        <li><a href="#" onclick="NV1A()">NV/1/A</a></li>
+                    </ul>
+                </div> 
+                
+                 <!-- Scenariusze dla instalacji katalizatorów -->
+                
+               <div class="dropdown separatorTop scenInstKatalizatoryInvisible" id="scenInstKatalizatory1">
+                    <button class="btn btn-default dropdown-toggle input-block-level form-control" type="button" id="scenInstKatalizatory" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" title="Wybierz scenariusz wypadkowy dla Instalacji Katalizatorów">
+				    Scenariusze
+				    <span class="caret"></span>
+				  </button>
+                    <ul class="dropdown-menu" aria-labelledby="scenInstKatalizatory">
+                        <li><h6 class="dropdown-header">Instalacja Katalizatorów</h6></li>
+                        <li><a href="#" onclick="NWK1A()">NWK/1/A</a></li>
+                        <li><a href="#" onclick="NWK1B()">NWK/1/B</a></li>
+                    </ul>
+                </div> 
+                <div class="separatorTop">    
+                </div>
+                <div class="separatorTop">    
+                </div>
+                
+                
+            </div>
+            <!-- koniec lewej strony ->>
+            
+            <!-- Mapki -->
+
+            <div class="col-lg-8 col-md-8 col-sm-8">
+                <div id="scenMapHeader">
+                    <p>W opracowaniu <em>Raport o Bezpieczeństwie dla <span class="capitalic">grupy azoty s.a.</span></em> przyjęto zasadę, że instalacje spełniające kryteria ilościowe <span class="magnify">ZDR</span> posiadają opracowane osobne <em>Analizy Ryzyka Procesowego</em>.</p>
+                    <p>Zgodnie z tym założeniem w zaprezentowano w poszczególnych instalacjach zdażenia wypadkowe.</p>
+                </div>
+                   <div class="thumbnail">
+                    <img src="logo.jpg" alt="logo" id="scenMap">
+                </div>
+            </div>
+        </div>
+        <!-- Drugi wiersz -->
+
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8">
+                <div id="scenMapFooter">
+                    
+                </div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="js/map.js">
+
+
+        </script>
+
+</body>
+
+</html>

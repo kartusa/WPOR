@@ -1,0 +1,165 @@
+html {
+	height: 100%;
+}
+
+.separatorTop {
+	padding-top: 5px;
+}
+
+.capitalic {
+	text-transform: uppercase;
+}
+
+body {
+    background-color: #003268;
+    color: #fff;
+    font-family: 'Roboto', sans-serif; 
+}
+
+.nawozyInvisible {
+    display: none;
+}
+
+.logistykaInvisible {
+    display: none;
+}
+
+.tworzywaInvisible {
+    display: none;
+}
+
+.energetykaInvisible {
+    display: none;
+}
+
+.oczyszczalniaInvisible {
+    display: none;
+}
+
+.katalizatoryInvisible {
+    display: none;
+}
+
+.scenAmon1Invisible, .scenAmon2Invisible, .scenStoAmonInvisible, .scenInstKasInvisible, .scenStoKasInvisible, .scenInstNitInvisible, .scenInstNawInvisible, .scenInstAzotInvisible, .scenInstShaInvisible, .scenStoOleumAInvisible, .scenStoFenInvisible, .scenStoOleumKInvisible, .scenStoK50Invisible, .scenStoUtlInvisible, .scenCenChInvisible, .scenStoForInvisible, .scenStoForInvisible, .scenStoMetInvisible, .scenInstForInvisible, .scenMagNawInvisible, .scenInstKatalizatoryInvisible {
+    display: none;
+}
+
+nav {
+    background: #000a3d !important;
+}
+
+#logoScenariusz {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.centruj {
+    text-align: center !important;
+}
+
+.magnify {
+    font-size: 1em;
+    transition: 0.3s font-size linear;
+    -ms-transition: 0.3s font-size linear;
+    -o-transition: 0.3s font-size linear;
+    -webkit-transition: 0.3s font-size linear;
+    -moz-transition: 0.3s font-size linear;
+    -ms-transition: 0.3s font-size linear;
+    -webkit-transition: 0.3s font-size linear;
+    -moz-transition: 0.3s font-size linear;
+    -o-transition: 0.3s font-size linear;
+}
+
+.magnify:hover {
+    font-size: 1.1em;
+    transition: 0.3s font-size linear;
+    -o-transition: 0.3s font-size linear;
+    -ms-transition: 0.3s font-size linear;
+    -webkit-transition: 0.3s font-size linear;
+    -moz-transition: 0.3s font-size linear;
+    -ms-transition: 0.3s font-size linear;
+    -moz-transition: 0.3s font-size linear;
+    -webkit-transition: 0.3s font-size linear;
+    -o-transition: 0.3s font-size linear;
+}
+
+.obracanko:hover {
+    transform: rotateY(360deg);
+    -o-transform: rotateY(360deg);
+    -ms-transform: rotateY(360deg);
+    -webkit-transform: rotateY(360deg);
+    -moz-transform: rotateY(360deg);
+    -ms-transform: rotateY(360deg);
+    -webkit-transform: rotateY(360deg);
+    -moz-transform: rotateY(360deg);
+    -o-transform: rotateY(360deg);
+    transition: 1.0s transform linear;
+    -o-transition: 1.0s transform linear;
+    -webkit-transition: 1.0s transform linear;
+    -moz-transition: 1.0s transform linear;
+    -ms-transition: 1.0s transform linear;
+    
+}
+
+.obracanko {
+    transition: 1.0s transform linear;
+    -o-transition: 1.0s transform linear;
+    -ms-transition: 1.0s transform linear;
+    -webkit-transition: 1.0s transform linear;
+    -moz-transition: 1.0s transform linear;
+}
+
+#scenMap {
+    transition: all 0.5s linear;
+    -o-transition: all 0.5s linear;
+    -ms-transition: all 0.5s linear;
+    -webkit-transition: all 0.5s linear;
+    -moz-transition: all 0.5s linear;
+}
+
+#scenMap:hover {
+    transform: scale(1.8);
+    -ms-transform: scale(1.8);
+    -webkit-transform: scale(1.8);
+    -moz-transform: scale(1.8);
+    -o-transform: scale(1.8);
+    transition: all 0.5s linear;
+    -o-transition: all 0.5s linear;
+    -moz-transition: all 0.5s linear;
+    -ms-transition: all 0.5s linear;
+    -webkit-transition: all 0.5s linear;
+}
+
+summary {
+    color: #c6edbd;
+}
+#instMap:hover {
+    transform: scale(2.4);
+    -ms-transform: scale(2.4);
+    -webkit-transform: scale(2.4);
+    -moz-transform: scale(2.4);
+    -o-transform: scale(2.4);
+    transition: all 1.9s ease-in-out;
+    -o-transition: all 1.9s ease-in-out;
+    -moz-transition: all 1.9s ease-in-out;
+    -webkit-transition: all 1.9s ease-in-out;
+    -ms-transition: all 1.9s ease-in-out;
+}
+
+#instMap {
+    transition: all 1.9s ease-in-out;
+    -o-transition: all 1.9s ease-in-out;
+    -ms-transition: all 1.9s ease-in-out;
+    -webkit-transition: all 1.9s ease-in-out;
+    -moz-transition: all 1.9s ease-in-out;
+}
+
+
+.thumbnail {
+    z-index: 1 !important;
+    overflow: hidden;
+}
+
+.mInvisible {
+    display: none;
+}

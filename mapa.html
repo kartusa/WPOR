@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Wewnętrzny Plan Operacyjno-Ratowniczy</title>
+    <link rel="stylesheet" href="favicon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style/wpor.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <!-- Pasek nawigacji -->
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+
+            <!-- Logo i linki nie do zwinięcia -->
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+                <a class="navbar-brand" href="index.html">
+        <p class="capitalic">grupa azoty s.a.</p>
+      </a>
+            </div>
+
+            <!-- Linki, które będą zwinięte-->
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Mapa <span class="sr-only">(current)</span></a></li>
+                    <li><a href="scenario.html">Scenariusze</a></li>
+                    <li><a href="subst.html">Substancje</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Autor</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Koniec paska nawigacyjnego -->
+
+    <!-- Główny kontener -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                
+                <!-- Jednostki Produkcyjne -->
+
+                <div class="dropdown separatorTop">
+                    <button class="btn btn-default dropdown-toggle input-block-level form-control" type="button" id="mapBrandSelect" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" title="Wybierz Jednostkę">
+				    <span class="fa fa-map-o"></span> Jednostki produkcyjne: 
+				    <span class="caret"></span>
+				  </button>
+                    <ul class="dropdown-menu" aria-labelledby="mapBrandSelect">
+                        <li><a href="#" onclick="mapSelectNawozy()">Jednostka Biznesowa Nawozy</a></li>
+                        <li><a href="#" onclick="mapSelectTworzywa()">Segment Biznesowy Tworzyw</a></li>
+                        <li><a href="#" onclick="mapSelectEnergetyka()">Centrum Energetyki </a></li>
+                        <li><a href="#" onclick="mapSelectInfrastruktura()">Centrum Infrastruktury</a></li>
+                        <li><a href="#" onclick="mapSelectKatalizatory()">Jednostka Biznesowa Katalizatory</a></li>
+                    </ul>
+                </div>
+
+                <!-- Instalacje Jednostki Biznesowej Nawozy -->
+
+                <div class="dropdown separatorTop mInvisible" id="mapInstalNawozy1">
+                    <button class="btn btn-default dropdown-toggle input-block-level form-control" type="button" id="mapInstalNawozy" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" title="Wybierz instalację w JP Nawozy">
+				    Instalacje JP Nawozy
+				    <span class="caret"></span>
+				  </button>
+                    <ul class="dropdown-menu" aria-labelledby="mapInstalNawozy">
+                        <li><h6 class="dropdown-header">Wydział Amoniaku</h6></li>
+                        <li><a href="#" onclick="mapInstGazSyntezowy()">Instalacja Gazu Syntezowego</a></li>
+                        <li><a href="#" onclick="mapInstWodor()">Instalacja Wodoru</a></li>
+                        <li><a href="#" onclick="mapInstAmoniak()">Instalacja Amoniaku</a></li>
+                        <li><a href="#" onclick="mapInstWodaAmoniakalna()">Instalacja Wody Amoniakalnej</a></li>
+                        <li><h6 class="dropdown-header">Wydział Kwasów Azotowych</h6></li>
+                        <li><a href="#" onclick="mapInstKat()">Instalacja Kwasu Azotowego Technicznego</a></li>
+                        <li><a href="#" onclick="mapInstKas()">Instalacja Kwasu Azotowego Stężonego</a></li>
+                        <li><a href="#" onclick="mapInstNitroz()">Instalacja Nitroz</a></li>
+                        <li><h6 class="dropdown-header">Wydział Nawozów</h6></li>
+                        <li><a href="#" onclick="mapInstNawozow()">Instalacje Nawozowe</a></li> 
+                        <li><a href="#" onclick="mapInstDolomit()">Instalacja Mączki Dolomitowej</a></li> 
+                    </ul>
+                </div>
+                
+                <!-- Instalacje Segmentu Biznesowego Tworzyw -->
+
+                <div class="dropdown separatorTop mInvisible" id="mapInstalTworzywa1">
+                    <button class="btn btn-default dropdown-toggle input-block-level form-control" type="button" id="mapInstalTworzywa" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" title="Wybierz instalację w SB Tworzyw">
+				    Instalacje SB Tworzyw
+				    <span class="caret"></span>
+				  </button>
+                    <ul class="dropdown-menu" aria-labelledby="mapInstalTworzywa">
+                        <li><h6 class="dropdown-header">Wydział WKS i SHA</h6></li>
+                        <li><a href="#" onclick="mapInstAzotyn()">Instalacja Azotynu Amonu</a></li>
+                        <li><a href="#" onclick="mapInstSha()">Instalacja Siarczanu Hydroksyloaminy</a></li>
+                        <li><a href="#" onclick="mapInstWks()">Instalacja Kwasu Siarkowego i Oleum</a></li>
+                        <li><h6 class="dropdown-header">Wydział Cykloheksanonu, Utleniania</h6></li>
+                        <li><a href="#" onclick="mapInstCykloheksanon()">Wytwarzanie cykloheksanonu z fenolu i benzenu</a></li>
+                        <li><h6 class="dropdown-header">Wydział Laktamu</h6></li>
+                        <li><a href="#" onclick="mapInstKapro()">Instalacja Kaprolaktamu</a></li>
+                        <li><h6 class="dropdown-header">Wydział Polimeryzacji Kaprolaktamu</h6></li>
+                        <li><a href="#" onclick="mapInstPoliamidy()">Wytwórnia Poliamidu PA-6</a></li>
+                        <li><h6 class="dropdown-header">Wydział Tarnoformu i Formaliny</h6></li>
+                        <li><a href="#" onclick="mapInstTarnoform()" title="Obejmuje również: instalację formaliny, stokaż metanolu, stokaż formaliny, instalację zatężania formaliny, instalacje trioksanu, dioksolanu, politrioksanu">Instalacja Tarnoformu</a></li>
+                        <li><h6 class="dropdown-header">Wydział Siarczanu Amonowego</h6></li>
+                        <li><a href="#" onclick="mapInstSiarczan()">Wytwórnia Siarczanu Amonu</a></li> 
+                        <li><h6 class="dropdown-header">Wydział Osłonek i Granulatów Modyfikowanych</h6></li>
+                        <li><a href="#" onclick="mapInstCompound()">Instalacja Procesu Modyfikacji Tworzyw (Compounding)</a></li> 
+                    </ul>
+                </div>
+                
+                <!-- Instalacje Centrum Energetyki -->
+
+                <div class="dropdown separatorTop mInvisible" id="mapInstalEnergetyka1">
+                    <button class="btn btn-default dropdown-toggle input-block-level form-control" type="button" id="mapInstalEnergetyka" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" title="Wybierz instalację w Centrum Energetyki">
+				    Instalacje Centrum Energetyki
+				    <span class="caret"></span>
+				  </button>
+                    <ul class="dropdown-menu" aria-labelledby="mapInstalEnergetyka">
+                        <li><h6 class="dropdown-header">Wydział Kotłowni i Nawęglania, Maszynowni i Gospodarki Wodnej, Zasilania i Zabezpieczeń</h6></li>
+                        <li><a href="#" onclick="mapInstMazut()">Instalacja Mazutowni, Uzdatnianie wody</a></li>
+                    </ul>
+                </div>
+               
+                 <!-- Instalacje Centrum Infrastruktury -->
+
+                <div class="dropdown separatorTop mInvisible" id="mapInstalInfrastruktura1">
+                    <button class="btn btn-default dropdown-toggle input-block-level form-control" type="button" id="mapInstalInfrastruktura" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" title="Wybierz instalację w Centrum Infrastruktury">
+				    Instalacje Centrum Infranstruktury
+				    <span class="caret"></span>
+				  </button>
+                    <ul class="dropdown-menu" aria-labelledby="mapInstalInfrastruktury">
+                        <li><h6 class="dropdown-header">Wydział Produkcji i Dystrybucji Mediów</h6></li>
+                        <li><a href="#" onclick="mapInstOczyszczalnia()">Gospodarka wodno-ściekowa, Oczyszczalnia ścieków i odpadów</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Instalacje Jednostki Biznesowej Katalizatory -->
+
+                <div class="dropdown separatorTop mInvisible" id="mapInstalKatalizatory1">
+                    <button class="btn btn-default dropdown-toggle input-block-level form-control" type="button" id="mapInstalKatalizatory" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" title="Wybierz instalację w Jednostce Biznesowej Katalizatory">
+				    Instalacje Jednostki Biznesowej Katalizatory
+				    <span class="caret"></span>
+				  </button>
+                    <ul class="dropdown-menu" aria-labelledby="mapInstalKatalizatory">
+                        <li><a href="#" onclick="mapInstKatalizatory()">Instalacja Katalizatorów</a></li>
+                    </ul>
+                </div>
+                
+            <!-- Mapy -->   
+             
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8">
+                <div class="thumbnail">
+                    <img src="maps/mapa.png" alt="mapa Tarnowa" id="instMap">
+                </div>
+            </div>
+
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/map.js">
+    </script>
+    
+</body>
+
+</html>

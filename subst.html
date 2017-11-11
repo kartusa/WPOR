@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Wewnętrzny Plan Operacyjno-Ratowniczy</title>
+    <link rel="stylesheet" href="favicon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style/wpor.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <!-- Pasek nawigacji -->
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+
+            <!-- Logo i linki nie do zwinięcia -->
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+                <a class="navbar-brand" href="index.html">
+                    <p class="capitalic">grupa azoty s.a.</p>
+                </a>
+            </div>
+
+            <!-- Linki, które będą zwinięte-->
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="mapa.html">Mapa <span class="sr-only">(current)</span></a></li>
+                    <li><a href="scenario.html">Scenariusze</a></li>
+                    <li><a href="#">Substancje</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Autor</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Koniec paska nawigacyjnego -->
+
+    <!-- Główny kontener -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <p id="logoScenariusz">Substancje</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4">
+
+                <!-- Wybór substancji -->
+                
+                <div class="dropdown separatorTop">
+                    <button class="btn btn-default dropdown-toggle input-block-level form-control" type="button" id="substSelect" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+				    <span class="fa fa-industry"></span> Substancje chemiczne:
+				    <span class="caret"></span>
+				  </button>
+                    <ul class="dropdown-menu" aria-labelledby="substSelect">
+                        <li><a href="#" onclick="substNitroza()">nitroza</a></li>
+                        <li><a href="#" onclick="substKas()">kwas azotowy stężony</a></li>
+                        <li><a href="#" onclick="substOleum()">oleum</a></li>
+                        <li><a href="#" onclick="substAmoniak()">amoniak</a></li>
+                        <li><a href="#" onclick="substAzotan()">azotan amonu</a></li>
+                        <li><a href="#" onclick="substNawozy()">nawozy saletrzane</a></li>
+                        <li><a href="#" onclick="substFormalina()">formalina</a></li>
+                        <li><a href="#" onclick="substMetanol()">metanol</a></li>
+                        <li><a href="#" onclick="substTrioksan()">trioksan</a></li>
+                        <li><a href="#" onclick="substMrowczan()">mrówczan metylu</a></li>
+                        <li><a href="#" onclick="substAzotyn()">azotyn amonu</a></li>
+                        <li><a href="#" onclick="substSha()">siarczan hydroksyloaminy</a></li>
+                    </ul>
+                </div>
+                <div class="separator-top"></div>
+            </div>
+            <!-- koniec lewej strony ->>
+            
+            <!-- Właściwości substancji -->
+
+            <div class="col-lg-8 col-md-8 col-sm-8">
+                <div id="substContent">
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="js/subst.js">
+
+
+        </script>
+
+</body>
+
+</html>
